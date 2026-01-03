@@ -5,8 +5,20 @@ import { createNode } from './BaseNode';
 
 export const LLMNode = createNode({
   title: 'LLM',
-  content: <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.9)' }}>This is a LLM.</span>,
-  fields: [],
+  fields: [
+    {
+      name: 'llmModel',
+      label: 'Model',
+      type: 'select',
+      defaultValue: 'GPT-3.5',
+      options: [
+        { value: 'GPT-3.5', label: 'GPT-3.5' },
+        { value: 'GPT-4', label: 'GPT-4' },
+        { value: 'Claude', label: 'Claude' },
+        { value: 'Llama', label: 'Llama' },
+      ],
+    },
+  ],
   handles: [
     {
       type: 'target',

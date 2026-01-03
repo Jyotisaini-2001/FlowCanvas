@@ -97,6 +97,8 @@ export const BaseNode = ({ id, data, config }) => {
                 borderRadius: '4px',
                 fontSize: '12px',
                 boxSizing: 'border-box',
+                backgroundColor: 'white',
+                color: '#2d3748',
               }}
             />
           </label>
@@ -119,6 +121,7 @@ export const BaseNode = ({ id, data, config }) => {
                 fontSize: '12px',
                 boxSizing: 'border-box',
                 backgroundColor: 'white',
+                color: '#2d3748',
               }}
             >
               {options.map(opt => (
@@ -150,6 +153,8 @@ export const BaseNode = ({ id, data, config }) => {
                 boxSizing: 'border-box',
                 fontFamily: 'inherit',
                 resize: 'vertical',
+                backgroundColor: 'white',
+                color: '#2d3748',
               }}
             />
           </label>

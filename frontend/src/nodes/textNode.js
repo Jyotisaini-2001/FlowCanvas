@@ -55,23 +55,44 @@ export const TextNode = ({ id, data }) => {
     }}>
       {/* Variable input handles */}
       {variables.map((variable, index) => (
-        <Handle
-          key={`var-${variable}`}
-          type="target"
-          position={Position.Left}
-          id={`${id}-${variable}`}
-          style={{
+        <div key={`var-container-${variable}`}>
+          <Handle
+            type="target"
+            position={Position.Left}
+            id={`${variable}`}
+            style={{
+              top: `${((index + 1) * 100) / (variables.length + 1)}%`,
+              background: '#667eea',
+              width: '12px',
+              height: '12px',
+              border: '2px solid white',
+            }}
+          />
+          <div style={{
+            position: 'absolute',
+            left: '20px',
             top: `${((index + 1) * 100) / (variables.length + 1)}%`,
-            background: '#667eea',
-          }}
-        />
+            transform: 'translateY(-50%)',
+            fontSize: '10px',
+            color: '#4a5568',
+            whiteSpace: 'nowrap',
+            fontWeight: '500',
+            background: 'rgba(255, 255, 255, 0.9)',
+            padding: '2px 6px',
+            borderRadius: '3px',
+            border: '1px solid #e2e8f0',
+            pointerEvents: 'none',
+          }}>
+            {variable}
+          </div>
+        </div>
       ))}
 
       {/* Output handle */}
       <Handle
         type="source"
         position={Position.Right}
-        id={`${id}-output`}
+        id={`output`}
       />
 
       {/* Title */}

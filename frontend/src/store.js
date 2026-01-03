@@ -11,6 +11,7 @@ import {
 export const useStore = create((set, get) => ({
     nodes: [],
     edges: [],
+    nodeIDs: {},
     getNodeID: (type) => {
         const newIDs = {...get().nodeIDs};
         if (newIDs[type] === undefined) {
@@ -24,6 +25,12 @@ export const useStore = create((set, get) => ({
         set({
             nodes: [...get().nodes, node]
         });
+    },
+    setNodes: (nodes) => {
+        set({ nodes });
+    },
+    setEdges: (edges) => {
+        set({ edges });
     },
     onNodesChange: (changes) => {
       set({
@@ -46,7 +53,7 @@ export const useStore = create((set, get) => ({
           if (node.id === nodeId) {
             node.data = { ...node.data, [fieldName]: fieldValue };
           }
-  
+
           return node;
         }),
       });
